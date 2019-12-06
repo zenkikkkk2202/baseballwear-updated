@@ -1,0 +1,35 @@
+.header
+  .header__logo
+    BaseballWear
+  .header__link
+    .header__link__login
+      = link_to user_session_path do  
+        ログイン
+    .header__link__registration
+      = link_to new_user_registration_path do
+        登録
+
+.main
+  .main__searchform
+    = form_tag('/search', method: :get, class: 'search-form') do
+      %input.main__searchform__input{name: "keyword", placeholder: "何をお探しですか？", type: "text", value: ""}
+      %button.main__searchform__btn{title: "検索", type: "submit"}
+        
+
+  .main__text
+    Newposts
+  .main__post
+    .main__post__image
+      image1
+    .main__post__image
+      image2
+    .main__post__image
+      image3
+    .main__post__image
+      image4
+    .main__post__image
+      image5
+    .main__post__image
+      image6
+    
+  
