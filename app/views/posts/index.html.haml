@@ -1,13 +1,19 @@
 .header
   .header__logo
     BaseballWear
+  .header__image
+    image(仮）
+  .header__team
+    = current_user.favorite_team
+  .header__name
+    = current_user.nickname
   .header__link
-    .header__link__login
-      = link_to user_session_path do  
-        ログイン
-    .header__link__registration
-      = link_to new_user_registration_path do
-        登録
+    .header__link__edit
+      = link_to edit_user_path(current_user) do
+        ユーザー編集
+    .header__link__post
+      = link_to new_post_path do
+        投稿
 
 .main
   .main__searchform
