@@ -54,6 +54,7 @@
     font-family: Impact;
     padding-left: 33px;
     padding-top: 30px;
+    text-align: center;
     
   }
   &__post{
@@ -66,8 +67,10 @@
         width: 33%;
       }
     }
-    
   }
-  
+
     }
   
+.pagination{
+  text-align: center;
+}

@@ -1,24 +1,33 @@
 .main{
   
-  text-align: center;
+  // text-align: center;
   &__searchform{
     padding-bottom: 20px;
   }
+  &__manuplate{
+    text-align-last: center;
+  }
   &__content{
-    padding-left: 150px;
+    padding-left: 40px;
     display: flex;
+    
     &__image{
-      padding-right: 70px;
+      padding-right: 20px;
       height: 400px;
+      text-align: center;
     }
     &__text{
-      width: 600px;
+      width: 350px;
       font-size: 18px;
+      padding-left: 30px;
       p{
         
         margin-top: 20px;
       }
     }
-    
+  &__comment{
+    width: 300px;
+    padding-top: 50px;
+  }
   }
 }
