@@ -21,10 +21,9 @@
     = form_tag('/search', method: :get, class: 'search-form') do
       %input.main__searchform__input{name: "keyword", placeholder: "何をお探しですか？", type: "text", value: ""}
       %button.main__searchform__btn{title: "検索", type: "submit"}
-        
 
   .main__text
-    Newposts
+    Posts 
   .main__post
     %ul.main__post__box
       - if @posts
@@ -38,6 +37,3 @@
                 %li 投稿時間
                 = post.created_at
                 = link_to "Detail", "/posts/#{post.id}"
-
-  
-    
