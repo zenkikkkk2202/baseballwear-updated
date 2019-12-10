@@ -31,7 +31,11 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    
+    redirect_to root_path
+  end
+
+  def search
+    @posts = Post.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(3)
   end
 
   private
