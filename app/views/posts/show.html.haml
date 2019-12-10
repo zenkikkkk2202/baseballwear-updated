@@ -19,6 +19,7 @@
       削除
     = link_to "/posts/#{@post.id}/edit" do
       編集 
+    
   .main__content
     .main__content__image
       %p= image_tag @post.image.to_s,size: :"550x600"
@@ -27,4 +28,13 @@
       = @post.team
       %pテキスト
       = @post.text
-      %pコメント
+      %pコメント一覧
+      - if @comments
+        - @comments.each do |c|
+          %p
+            = c.text 
+            = c.user.nickname
+    .main__content__comment
+      = form_for [@post,@comment] do |f|
+        = f.text_field :text, placeholder: "コメント投稿"
+        = f.submit "Send"
