@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    user = User.find(params[:id])
+    @nickname = user.nickname
+    @posts = user.posts
+  end
+
   private
 
   def user_params

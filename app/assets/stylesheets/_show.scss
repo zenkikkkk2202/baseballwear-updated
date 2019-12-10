@@ -1,0 +1,24 @@
+.main{
+  
+  text-align: center;
+  &__searchform{
+    padding-bottom: 20px;
+  }
+  &__content{
+    padding-left: 150px;
+    display: flex;
+    &__image{
+      padding-right: 70px;
+      height: 400px;
+    }
+    &__text{
+      width: 600px;
+      font-size: 18px;
+      p{
+        
+        margin-top: 20px;
+      }
+    }
+    
+  }
+}
