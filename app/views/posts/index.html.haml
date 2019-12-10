@@ -38,6 +38,6 @@
                 %li 投稿時間
                 = post.created_at
                 = link_to "Detail", "/posts/#{post.id}"
-
+  = paginate(@posts)
   
     
