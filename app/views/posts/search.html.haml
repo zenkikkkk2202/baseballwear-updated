@@ -1,28 +1,11 @@
-
-.header
-  .header__logo
-    BaseballWear
-  .header__image
-    image(仮）
-  .header__team
-    = current_user.favorite_team
-  .header__name
-    = link_to user_path(current_user) do
-      = current_user.nickname
-  .header__link
-    .header__link__edit
-      = link_to edit_user_path(current_user) do
-        ユーザー編集
-    .header__link__post
-      = link_to new_post_path do
-        投稿
-
+= render partial: "header"
 
 
 .main__searchform
   = form_with(url: search_posts_path, local: true,method: :get) do |f|
     = f.text_field :keyword, placeholder: "チーム検索"
     = f.submit "検索"
+
 
 
 .main__post

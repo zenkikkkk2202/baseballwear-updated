@@ -1,26 +1,19 @@
-.header
-  .header__logo
-    BaseballWear
-  .header__link
-    .header__link__login
-      = link_to "#" do
-        ログイン
-    .header__link__registration
-      = link_to "#" do
-        登録
+= render partial: "header"
 
 .main
   .main__searchform
     = form_with(url: search_posts_path, local: true,method: :get) do |f|
       = f.text_field :keyword, placeholder: "チーム検索"
       = f.submit "検索"
-  .main__manuplate
-    = link_to "/posts/#{@post.id}",method: :delete do
-      削除
-    = link_to "/posts/#{@post.id}/edit" do
-      編集 
+  - if user_signed_in? && current_user.id == @post.user_id 
+    .main__manuplate
+      = link_to "/posts/#{@post.id}",method: :delete do
+        削除
+      = link_to "/posts/#{@post.id}/edit" do
+        編集 
     
   .main__content
+
     .main__content__image
       %p= image_tag @post.image.to_s,size: :"550x600"
     .main__content__text
@@ -35,6 +28,9 @@
             = c.text 
             = c.user.nickname
     .main__content__comment
-      = form_for [@post,@comment] do |f|
-        = f.text_field :text, placeholder: "コメント投稿"
-        = f.submit "Send"
+      -if current_user
+        = form_for [@post,@comment] do |f|
+          = f.text_field :text, placeholder: "コメント投稿"
+          = f.submit "Send"
+      - else 
+        %p コメント投稿にはログインが必要です
