@@ -1,16 +1,4 @@
-.header
-  .header__logo
-    BaseballWear
-  .header__image
-    image(仮）
-  .header__team
-    = current_user.favorite_team
-  .header__name
-    = current_user.nickname
-  .header__link
-    .header__link__edit
-      = link_to edit_user_path(current_user) do
-        ユーザー編集
+= render partial: "header"
 
 
 .post
