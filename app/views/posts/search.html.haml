@@ -9,6 +9,8 @@
 
 
 .main__post
+  .main__good
+    = render partial: 'posts/posts', collection: @posts, as: :post
   %ul.main__post__box
     - if @posts
       - @posts.each do |post|
