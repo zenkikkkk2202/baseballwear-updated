@@ -10,10 +10,10 @@
       = link_to user_path(current_user) do
         = current_user.nickname
   .header__link
-    -if user_signed_in? && current_user.id == post.user_id
-    .header__link__edit
-      = link_to edit_user_path(current_user) do
-        ユーザー編集
-    .header__link__post
-      = link_to new_post_path do
-        投稿
+    -if user_signed_in? 
+      .header__link__edit
+        = link_to edit_user_path(current_user) do
+          ユーザー編集
+      .header__link__post
+        = link_to new_post_path do
+          投稿

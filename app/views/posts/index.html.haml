@@ -8,9 +8,12 @@
     = form_with(url: search_posts_path, local: true,method: :get) do |f|
       = f.text_field :keyword, placeholder: "チーム検索"
       = f.submit "検索"
-
+  
+  
   .main__text
     Newposts
+  .main__good
+    = render partial: 'posts/posts', collection: @posts, as: :post
   .main__post
     %ul.main__post__box
       - if @posts
