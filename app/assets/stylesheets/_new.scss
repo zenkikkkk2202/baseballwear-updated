@@ -1,35 +1,47 @@
 .post{
-  
+  height: calc(100vh-90px);
   &__top{
     font-size: 25px;
     align-items: center;
     text-align: center;
     font-family: "impact";
   }
-
-
-
   &__form{
-    height: 100vh;
-    margin-top: 30px;
     text-align: center;
+    padding: 30px;
+    
     &__image{
-      font-size: 20px;
-      line-height: 80px;
+      display: block;
+      padding: 30px;
     }
-    &__blank{
-      width: 50vw;
-      height: 40px;
-    }
+  
     &__team{
-      width: 50px;
+      display: block;
+      padding: 30px;
+    }
+
+    &__text{
+      display: block;
+      padding: 30px;
     }
   }
+//   &__form{
+//     height: 100vh;
+//     margin-top: 30px;
+//     text-align: center;
+//     &__image{
+//       font-size: 20px;
+      
+//       width: 800px;
+//     }
+//     &__blank{
+//       width: 50vw;
+//       height: 40px;
+//     }
+//     &__team{
+//       width: 50px;
+//     }
+//   }
 
-
+}
   
-}
-
-.new_post{
-  height: 100vh;
-}

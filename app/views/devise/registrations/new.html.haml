@@ -21,7 +21,7 @@
           .field-label
             = f.label :favorite_team
           .field-input
-            = f.text_field :favorite_team, autofocus: true
+            = f.select :favorite_team, ["","ジャイアンツ","ベイスターズ","タイガース","カープ","ドラゴンズ","スワローズ","ライオンズ","ホークス","イーグルス","マリーンズ","ファイターズ","バファローズ"]
         .field
           .field-label
             = f.label :image
