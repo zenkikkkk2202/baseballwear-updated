@@ -4,8 +4,8 @@
 
 
 
-
 .header {
+  
   height: 90px;
   border-bottom:20px solid #ffa500;
   background-color: white;
@@ -20,10 +20,13 @@
     font-family: "impact";
   }
   &__profile{
+    
     display: flex;
     line-height: 90px;
     padding-left: 20px;
-   
+    &__team{
+      width: 100px;
+    }
     &__image{
       padding-top: 20px;
       img{
@@ -70,7 +73,7 @@
     font-size: 23px;
     font-family: Impact;
     padding-left: 33px;
-    padding-top: 30px;
+    
     text-align: center;
     
   }
