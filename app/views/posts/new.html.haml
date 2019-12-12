@@ -6,6 +6,7 @@
     Post
   .post__form
     = form_for @post do |f|
+      
       %label{class: "post__form__image"}
         image
         = f.file_field :image, class: "post__form__blank"
@@ -13,7 +14,7 @@
       
       %label{class: "post__form__team"}
         team 
-        = f.text_field :team, class: "post__form__blank"
+        = f.select :team, ["","ジャイアンツ","ベイスターズ","タイガース","カープ","ドラゴンズ","スワローズ","ライオンズ","ホークス","イーグルス","マリーンズ","ファイターズ","バファローズ"]
        
       
       %label{class: "post__form__text"}
