@@ -53,8 +53,11 @@
   width: 100%;
   
   &__searchform{
+    
+    margin: 0 auto;
     padding-top: 30px;
     text-align: center;
+  
     &__input{
       width: 400px;
     }
