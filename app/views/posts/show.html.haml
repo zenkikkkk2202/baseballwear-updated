@@ -22,8 +22,8 @@
       = @post.team
       %pテキスト
       = @post.text
-      -# %p投稿者名
-      -# = @ 
+      %p投稿者名
+      = @post.user.nickname
       %pオンラインショップサイト
       - if @post.team == "ジャイアンツ"
         =link_to "公式サイト", "https://store.giants.jp/store/"
