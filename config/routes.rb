@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   root to: "posts#top"
   resources :posts do 
-    resources :comments, only: :create
+    resources :comments, only: [:create,:new]
     collection do
       get "search"
       get "top"

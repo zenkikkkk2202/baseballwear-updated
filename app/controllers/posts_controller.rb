@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(:user).last(3).reverse
   end
 
   def edit    
