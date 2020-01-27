@@ -52,14 +52,17 @@
       
       %pコメント一覧
       - if @comments
-        - @comments.each do |c|
-          %p
-            = c.text 
-            = c.user.nickname
+        - @comments.each do |c| 
+          .comment_style 
+            = c.text
+          = link_to c.user.nickname, "/users/#{c.user_id}",class: "username"
+         
     .main__content__comment
       -if current_user
-        = form_for [@post,@comment] do |f|
-          = f.text_field :text, placeholder: "コメント投稿"
+        = form_with(model: [@post,@comment],url: post_comments_path(@post.id), id: "new_comment") do |f|
+          = f.text_field :text, placeholder: "コメント投稿",class: "message-field__area"
           = f.submit "Send"
       - else 
         %p コメント投稿にはログインが必要です
+
+

@@ -1,2 +1,2 @@
 
-$("<%= @id_name %>").html('<%= escape_javascript(render("likes/like", post: @post  )) %>');
+$("#like-<%= @post.id %>").html("<%= j(render partial: 'likes/like', locals: { post: @post }) %>");
