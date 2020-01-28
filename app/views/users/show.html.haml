@@ -5,7 +5,8 @@
     = render partial: "form"
 
   .main__text
-    Posts 
+    = @nickname 
+    Post
   .main__post
     %ul.main__post__box
       - if @posts
