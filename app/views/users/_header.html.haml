@@ -1,19 +1,67 @@
-.header
-  .header__logo
-    BaseballWear
-  .header__profile
-    .header__profile__image
-      = image_tag current_user.image.to_s, size: "55x55"
-    .header__profile__team
-      = current_user.favorite_team
-    .header__profile__name
-      = link_to user_path(current_user) do
-        = current_user.nickname
-  .header__link
-    -if user_signed_in? 
+
+
+- if user_signed_in?
+  .header
+    .header__logo
+      BaseballWear
+    .header__profile
+      .header__profile__image
+        = image_tag current_user.image.to_s, size: "55x55"
+      .header__profile__team
+        - if current_user.favorite_team == "ジャイアンツ"
+          = link_to "/posts/search?utf8=✓&keyword=ジャイアンツ&commit=検索" do
+            = "ジャイアンツ"
+        - elsif current_user.favorite_team == "ベイスターズ"
+          = link_to "/posts/search?utf8=✓&keyword=ベイスターズ&commit=検索" do
+            = "ベイスターズ"
+        - elsif current_user.favorite_team == "タイガース"
+          = link_to "/posts/search?utf8=✓&keyword=タイガース&commit=検索" do
+            = "タイガース"
+        - elsif current_user.favorite_team == "カープ"
+          = link_to "/posts/search?utf8=✓&keyword=カープ&commit=検索" do
+            = "カープ"
+        - elsif current_user.favorite_team == "ドラゴンズ"
+          = link_to "/posts/search?utf8=✓&keyword=ドラゴンズ&commit=検索" do
+            = "ドラゴンズ"
+        - elsif current_user.favorite_team == "スワローズ"
+          = link_to "/posts/search?utf8=✓&keyword=スワローズ&commit=検索" do
+            = "スワローズ"
+        - elsif current_user.favorite_team == "ライオンズ"
+          = link_to "/posts/search?utf8=✓&keyword=ライオンズ&commit=検索" do
+            = "ライオンズ"
+        - elsif current_user.favorite_team == "ホークス"
+          = link_to "/posts/search?utf8=✓&keyword=ホークス&commit=検索" do
+            = "ホークス"
+        - elsif current_user.favorite_team == "イーグルス"
+          = link_to "/posts/search?utf8=✓&keyword=イーグルス&commit=検索" do
+            = "イーグルス"
+        - elsif current_user.favorite_team == "マリーンズ"
+          = link_to "/posts/search?utf8=✓&keyword=マリーンズ&commit=検索" do
+            = "マリーンズ"
+        - elsif current_user.favorite_team == "ファイターズ"
+          = link_to "/posts/search?utf8=✓&keyword=ファイターズ&commit=検索" do
+            = "ファイターズ"
+        - elsif current_user.favorite_team == "バファローズ"
+          = link_to "/posts/search?utf8=✓&keyword=バファローズ&commit=検索" do
+            = "バファローズ"
+      .header__profile__name
+        = link_to user_path(current_user) do
+          = current_user.nickname
+    .header__link
       .header__link__edit
         = link_to edit_user_path(current_user) do
           ユーザー編集
       .header__link__post
         = link_to new_post_path do
           投稿
+- else
+  .header
+    .header__logo
+      BaseballWear
+    .header__link
+      .header__link__login
+        = link_to new_user_session_path do
+          ログイン
+      .header__link__registration
+        = link_to new_user_registration_path do
+          登録

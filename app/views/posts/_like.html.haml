@@ -1,0 +1,7 @@
+- if Like.find_by(user_id: current_user.id,post_id: @post.id)
+  = link_to "/posts/#{post.id}/likes", method: :delete
+  %i.material-icons star
+- else
+  = link_to "/posts/#{post.id}/likes", method: :post
+  %i.material-icons star_border
+= post.likes.length

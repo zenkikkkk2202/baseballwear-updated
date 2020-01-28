@@ -23,32 +23,33 @@
       %pテキスト
       = @post.text
       %p投稿者名
-      = @post.user.nickname
+      = link_to @post.user.nickname, "/users/#{@post.user_id}",class: "username"
+      -# = link_to @post.user.nickname
       %pオンラインショップサイト
       - if @post.team == "ジャイアンツ"
-        =link_to "公式サイト", "https://store.giants.jp/store/"
+        =link_to "ジャイアンツ公式サイト", "https://store.giants.jp/store/"
       - elsif @post.team == "ベイスターズ"
-        =link_to "公式サイト", "https://ec.baystars.co.jp/"
+        =link_to "ベイスターズ公式サイト", "https://ec.baystars.co.jp/"
       - elsif @post.team == "タイガース"
-        =link_to "公式サイト", "https://shop.hanshintigers.jp/"
+        =link_to "タイガース公式サイト", "https://shop.hanshintigers.jp/"
       - elsif @post.team == "カープ"
-        =link_to "公式サイト", "https://www.shop.carp.co.jp/"
+        =link_to "カープ公式サイト", "https://www.shop.carp.co.jp/"
       - elsif @post.team == "ドラゴンズ"
-        =link_to "公式サイト", "https://dragonsshop.info/"
+        =link_to "ドラゴンズ公式サイト", "https://dragonsshop.info/"
       - elsif @post.team == "スワローズ"
-        =link_to "公式サイト", "https://shop.yakult-swallows.co.jp/"
+        =link_to "スワローズ公式サイト", "https://shop.yakult-swallows.co.jp/"
       - elsif @post.team == "ライオンズ"
-        =link_to "公式サイト", "https://store.seibulions.jp/"
+        =link_to "ライオンズ公式サイト", "https://store.seibulions.jp/"
       - elsif @post.team == "ホークス"
-        =link_to "公式サイト", "https://www.softbankhawksstore.jp/"
+        =link_to "ホークス公式サイト", "https://www.softbankhawksstore.jp/"
       - elsif @post.team == "イーグルス"
-        =link_to "公式サイト", "https://www.rakuten.ne.jp/gold/rakuteneagles/"
+        =link_to "イーグルス公式サイト", "https://www.rakuten.ne.jp/gold/rakuteneagles/"
       - elsif @post.team == "マリーンズ"
-        =link_to "公式サイト", "https://www.marines.co.jp/goods/index.html"
+        =link_to "マリーンズ公式サイト", "https://www.marines.co.jp/goods/index.html"
       - elsif @post.team == "ファイターズ"
-        =link_to "公式サイト", "https://shop.fighters.co.jp/shopping/"
+        =link_to "ファイターズ公式サイト", "https://shop.fighters.co.jp/shopping/"
       - elsif @post.team == "バファローズ"
-        =link_to "公式サイト", "https://shop.buffaloes.co.jp/"
+        =link_to "バファローズ公式サイト", "https://shop.buffaloes.co.jp/"
       
       %pコメント一覧
       - if @comments
