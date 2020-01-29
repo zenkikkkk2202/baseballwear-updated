@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
-  devise_scope :user do
+  devise_group :user do
     get 'users/thanks' => 'users/registrations#thanks'
   end
 
