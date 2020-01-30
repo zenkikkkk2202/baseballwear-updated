@@ -1,5 +1,9 @@
 Rails.application.routes.draw do 
-  # devise_for :users
+  devise_for :users
+
+  devise_scope :user do
+    get 'users/thanks' => 'users/registrations#thanks'
+  end
 
   root to: "posts#top"
   resources :posts do 
