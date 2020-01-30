@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   devise_scope :user do
-    get 'users/thanks' => 'users/registrations#thanks'
+    get 'thanks' => 'users/registrations#thanks'
   end
 
   # GET /resource/edit
