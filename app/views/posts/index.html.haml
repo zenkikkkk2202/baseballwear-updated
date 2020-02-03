@@ -11,10 +11,8 @@
   
   .main__text
     Newposts
-  .main__good
-    - if user_signed_in?
-      = render partial: 'posts/posts', collection: @posts, as: :post, id: :good_function
-    -else 
+  .main__good  
+      = render partial: 'posts/posts', collection: @posts, as: :post, id: :good_function   
   .main__post
     %ul.main__post__box
       - if @posts
