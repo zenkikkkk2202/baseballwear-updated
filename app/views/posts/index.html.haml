@@ -12,7 +12,9 @@
   .main__text
     Newposts
   .main__good
-    = render partial: 'posts/posts', collection: @posts, as: :post, id: :good_function
+    - if user_signed_in?
+      = render partial: 'posts/posts', collection: @posts, as: :post, id: :good_function
+    -else 
   .main__post
     %ul.main__post__box
       - if @posts
