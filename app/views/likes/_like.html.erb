@@ -10,6 +10,7 @@
       <% end %>
     <% end %>
   <% else %>
-    <p> aaaaa </p>
+    <%= link_to like_path(post.id), method: :post, remote: true do %>
+        <div class = "iine__button">♡️<%= post.likes.count %></div>
   <% end %>
 </div>
