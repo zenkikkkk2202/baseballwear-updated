@@ -8,7 +8,7 @@
         - if current_user.image
           = image_tag current_user.image.to_s, size: "55x55"
         - else 
-          %img(src="/assets/noimage.jpg" alt="" width="55" height="55")
+          = image_tag "http://design-ec.com/d/e_others_50/l_e_others_500.jpg", size: "55x55"
       .header__profile__team
         - if current_user.favorite_team == "ジャイアンツ"
           = link_to "/posts/search?utf8=✓&keyword=ジャイアンツ&commit=検索" do
