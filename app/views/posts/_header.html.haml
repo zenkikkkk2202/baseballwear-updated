@@ -8,7 +8,7 @@
         - if current_user.image
           = image_tag current_user.image.to_s, size: "55x55"
         - else 
-          = image_tag "/assets/noimage.jpg", size: "55x55"
+          = image_tag "assets/noimage.jpg", size: "55x55"
       .header__profile__team
         - if current_user.favorite_team == "ジャイアンツ"
           = link_to "/posts/search?utf8=✓&keyword=ジャイアンツ&commit=検索" do
