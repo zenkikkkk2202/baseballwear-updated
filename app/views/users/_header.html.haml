@@ -6,10 +6,10 @@
       BaseballWear
     .header__profile
       .header__profile__image
-        - if current_user.image
+        - if current_user.image.present?
           = image_tag current_user.image.to_s, size: "55x55"
         - else 
-          %img(src="/assets/noimage.jpg" alt="" width="55" height="55")
+          = image_tag "noimage.jpg",size: "55x55"
       .header__profile__team
         - if current_user.favorite_team == "ジャイアンツ"
           = link_to "/posts/search?utf8=✓&keyword=ジャイアンツ&commit=検索" do
