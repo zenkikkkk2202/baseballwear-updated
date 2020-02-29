@@ -1,0 +1,24 @@
+= render partial: "header"
+
+.main__searchform
+  = form_with(url: search_posts_path, local: true,method: :get) do |f|
+    = f.text_field :keyword, placeholder: "チーム検索"
+    = f.submit "検索"
+
+.main__text
+  Followposts
+.main__post
+  %ul.main__post__box
+    - if @posts
+      - @posts.each do |post|
+        %li.main__post__box__image
+          = image_tag post.image.to_s, size: "350x500"
+          %ul.main__post__box__image__text
+            .main__post__box__image__text__2
+              %li チーム名
+              = post.team
+              %li 投稿時間
+              = post.created_at
+              = link_to "Detail", "/posts/#{post.id}"
+  .main__post__page
+  = paginate(@posts)

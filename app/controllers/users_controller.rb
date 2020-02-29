@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :current_user, only: [:edit, :update, :show,
+    :follow, :follower]
+
   def edit
   end
 
@@ -14,6 +18,11 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @nickname = user.nickname
     @posts = user.posts.order("created_at DESC").page(params[:page]).per(3)
+  end
+
+  def follow
+    @follow = current_user.followings
+    @follower = current_user.followers
   end
 
   private

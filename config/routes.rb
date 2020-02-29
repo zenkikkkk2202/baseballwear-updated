@@ -11,11 +11,20 @@ Rails.application.routes.draw do
     collection do
       get "search"
       get "top"
+      get "follow"
     end
   end
-  resources :users, only: [:edit, :update,:show]
+
+  resources :users, only: [:edit, :update,:show] do
+    collection do 
+      get "follow"
+      get "follower"
+    end
+  end
+
   post   '/like/:post_id' => 'likes#like',   as: 'like'
   delete '/like/:post_id' => 'likes#unlike', as: 'unlike'
+  
   resources :relationships, only: [:create, :destroy]
 end
 

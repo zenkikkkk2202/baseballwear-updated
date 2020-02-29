@@ -45,6 +45,9 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(3)
   end
 
+  def follow
+    @posts = Post.where(user_id = '7').order("created_at DESC").page(params[:page]).per(3)
+  end
 
   private
     def post_params
