@@ -24,7 +24,7 @@
       = @post.text
       %p投稿者名
       = link_to @post.user.nickname, "/users/#{@post.user_id}",class: "username"
-      
+      = render 'relationships/follow_button', user: @post.user
       %pオンラインショップサイト
       - if @post.team == "ジャイアンツ"
         =link_to "ジャイアンツ公式サイト", "https://store.giants.jp/store/"
