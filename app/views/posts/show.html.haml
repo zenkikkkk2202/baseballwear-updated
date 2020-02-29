@@ -19,7 +19,8 @@
       
     .main__content__text
       %pチーム名
-      = @post.team
+      = link_to "/posts/search?utf8=✓&keyword=#{@post.team}&commit=検索" do
+        = @post.team
       %pテキスト
       = @post.text
       %p投稿者名
