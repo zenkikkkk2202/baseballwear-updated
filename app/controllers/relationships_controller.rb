@@ -1,5 +1,5 @@
 class RelationshipsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:create,:destroy]
 
   def create
     user = User.find(params[:relationship][:follow_id])
@@ -23,6 +23,11 @@ class RelationshipsController < ApplicationController
       flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
       redirect_to user
     end
+  end
+
+  def rank
+    
+    @rankgroup = User.find(Relationship.group(:follow_id).order('count(follow_id) desc').limit(3).pluck(:follow_id))
   end
 
   private

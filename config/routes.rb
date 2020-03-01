@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     collection do
       get "search"
       get "top"
-      get "follow"
     end
   end
 
@@ -22,9 +21,15 @@ Rails.application.routes.draw do
     end
   end
 
+
   post   '/like/:post_id' => 'likes#like',   as: 'like'
   delete '/like/:post_id' => 'likes#unlike', as: 'unlike'
   
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy] do 
+    collection do 
+      get "rank"
+    end
+  end
+  
 end
 

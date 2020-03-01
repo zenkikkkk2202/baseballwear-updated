@@ -1,0 +1,23 @@
+= render "users/header"
+
+.main
+  .main__form
+    = render "users/form"
+
+  .main__rank
+    .main__rank__text
+      フォロワーランキング 
+    .main__rank__user
+      - if @rankgroup
+        - @rankgroup.each.with_index(1) do |r,i| 
+          .main__rank__user__box
+            .main__rank__user__box__number
+              = i
+            .main__rank__user__box__image
+              - if r.image.present?
+                = image_tag r.image.to_s, size: "100x100",class: "rank__image"
+              - else
+                = image_tag "noimage.jpg",size: "100x100"
+            .main__rank__user__box__name
+              = r.nickname
+          
