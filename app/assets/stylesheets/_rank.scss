@@ -1,0 +1,29 @@
+.main{
+  
+  width: 100%;
+  background-color: #f6f7f8;
+  &__rank{
+    height: 100vh;
+    text-align: center;
+    &__user{
+      display: flex;
+      margin: 0 auto;
+      width: 990px;
+      &__box{
+        background-color: white;
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+        &__name{
+          font-size: 20px;
+          font-weight: 500;
+        }
+        &__image{
+          img{
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+  }
+}

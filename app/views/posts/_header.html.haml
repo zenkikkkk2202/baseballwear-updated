@@ -58,6 +58,10 @@
         = link_to follow_users_path(current_user) do
           フォロワー
           = current_user.followers.count
+      .header__profile__rank
+        = link_to rank_relationships_path do
+          ランキング
+    
     .header__link
       .header__link__edit
         = link_to edit_user_path(current_user) do
