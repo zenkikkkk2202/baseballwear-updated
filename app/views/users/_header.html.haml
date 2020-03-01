@@ -3,7 +3,8 @@
 - if user_signed_in?
   .header
     .header__logo
-      BaseballWear
+      = link_to "/posts" do
+        BaseballWear
     .header__profile
       .header__profile__image
         - if current_user.image.present?
