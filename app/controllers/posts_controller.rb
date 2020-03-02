@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def like
-    @posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    @posts = Post.all.order("likes_count desc").limit(3)
   end
 
   private

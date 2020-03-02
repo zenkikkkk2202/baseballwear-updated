@@ -14,6 +14,10 @@
           %li.follow__main__box__name
           = link_to user_path(follow) do
             = follow.nickname
+            - if follow.image.present?
+              = image_tag follow.image.to_s, size: "40x40",class: "rank__image"
+            - else
+              = image_tag "noimage.jpg",size: "40x40"
 
 
 
@@ -25,4 +29,7 @@
           %li.follow__follower__box__name
           = link_to user_path(follower) do
             = follower.nickname
-          
+            - if follower.image.present?
+              = image_tag follower.image.to_s, size: "40x40",class: "rank__image"
+            - else
+              = image_tag "noimage.jpg",size: "40x40"
