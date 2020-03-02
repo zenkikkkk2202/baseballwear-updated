@@ -26,7 +26,6 @@ class RelationshipsController < ApplicationController
   end
 
   def rank
-    
     @rankgroup = User.find(Relationship.group(:follow_id).order('count(follow_id) desc').limit(3).pluck(:follow_id))
   end
 

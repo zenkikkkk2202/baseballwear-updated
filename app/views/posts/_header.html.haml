@@ -60,8 +60,10 @@
           = current_user.followers.count
       .header__profile__rank
         = link_to rank_relationships_path do
-          ランキング
-    
+          ユーザーランキング
+      .header__profile__popular
+        = link_to like_posts_path do
+          投稿ランキング
     .header__link
       .header__link__edit
         = link_to edit_user_path(current_user) do
@@ -72,7 +74,8 @@
 - else
   .header
     .header__logo
-      BaseballWear
+      = link_to "/posts" do
+        BaseballWear
     .header__link
       .header__link__login
         = link_to new_user_session_path do
