@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get "search"
       get "top"
+      get "like"
     end
   end
 
@@ -30,6 +31,6 @@ Rails.application.routes.draw do
       get "rank"
     end
   end
-  
+
 end
 
