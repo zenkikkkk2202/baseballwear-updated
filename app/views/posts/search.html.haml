@@ -1,10 +1,7 @@
 = render partial: "header"
 
+= render partial: "form"
 
-.main__searchform
-  = form_with(url: search_posts_path, local: true,method: :get) do |f|
-    = f.text_field :keyword, placeholder: "チーム検索"
-    = f.submit "検索"
 
 
 

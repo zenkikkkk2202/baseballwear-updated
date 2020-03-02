@@ -1,11 +1,8 @@
 = render partial: "header"
 
 .main
-  .main__searchform
-    = form_with(url: search_posts_path, local: true,method: :get) do |f|
-      = f.text_field :keyword, placeholder: "チーム検索"
-      = f.submit "検索"
-
+  = render partial: "form"
+  
   - if user_signed_in? && current_user.id == @post.user_id 
     .main__manuplate
       = link_to "/posts/#{@post.id}",method: :delete do
