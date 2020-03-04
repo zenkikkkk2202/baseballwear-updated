@@ -25,6 +25,6 @@
                 %li 投稿時間
                 = post.created_at
                 %li 投稿者
-                -# = post.user.nickname
+                = post.user.nickname
                 %li
                 = link_to "Detail", "/posts/#{post.id}"
