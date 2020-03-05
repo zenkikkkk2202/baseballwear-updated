@@ -1,0 +1,6 @@
+require Rails.root.join(“app/controllers/users/confirmation_controller.rb”)
+require Rails.root.join(“app/controllers/users/omuniauth_controller.rb”)
+require Rails.root.join(“app/controllers/users/passwords_controller.rb”)
+require Rails.root.join(“app/controllers/users/registrations_controller.rb”)
+require Rails.root.join(“app/controllers/users/sessions_controller.rb”)
+require Rails.root.join(“app/controllers/users/unlocks_controller.rb”)
