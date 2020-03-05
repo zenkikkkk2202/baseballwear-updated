@@ -29,9 +29,11 @@ a:hover {
     display: flex;
     line-height: 90px;
     padding-left: 20px;
+    
     &__team{
       text-decoration: none;
       width: 100px;
+      padding-left: 20px;
     }
     &__image{
       padding-top: 20px;
@@ -39,17 +41,35 @@ a:hover {
         border-radius: 50px;
       }
     }
+    &__name{
+      padding-left: 20px;
+    }
+    &__following{
+      padding-left: 20px;
+    }
+    &__followed{
+      padding-left: 20px;
+    }
+    &__rank{
+      padding-left: 20px;
+    }
+    &__popular{
+      padding-left: 20px;
+    }
   }
   &__link{
     text-decoration: none;
     font-size: 18px;
-    padding-left: 300px;
+    padding-left: 200px;
     padding-right: 20px;
     display: flex;
     line-height: 90px;
     font-family: "NewGulim";
     &__login{
       padding-right: 10px;
+    }
+    &__post{
+      padding-left: 20px;
     }
   }
 }
