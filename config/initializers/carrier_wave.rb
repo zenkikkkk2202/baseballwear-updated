@@ -4,8 +4,8 @@ if Rails.env.production?
     config.fog_credentials = {
       # Amazon S3用の設定
       provider: 'AWS',
-      aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
-      aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
+      aws_access_key_id: Rails.application.credentials[:access_key_id],
+      aws_secret_access_key: Rails.application.credentials[:secret_access_key],
       region: 'ap-northeast-1'
     }
     config.fog_directory     =  'baseballwear2'
